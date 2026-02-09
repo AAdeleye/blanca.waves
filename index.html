@@ -12,9 +12,10 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: #5a5a5a;
+            background: #ffffff;
         }
 
         /* Hero Section */
@@ -23,83 +24,118 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 2rem;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(255,255,255,0.7)), 
+                        url('https://via.placeholder.com/1920x1080/e8dfd5/e8dfd5') center/cover;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, #faf8f5);
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 700px;
             text-align: center;
-            color: white;
+            color: #5a5a5a;
+            position: relative;
+            z-index: 1;
         }
 
         .profile-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            border-radius: 3px;
             object-fit: cover;
-            border: 5px solid white;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: none;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 0.8s ease;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            color: #8b7355;
+            animation: fadeInUp 1s ease;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            opacity: 0.95;
-            animation: fadeInUp 0.8s ease 0.2s backwards;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-weight: 300;
+            color: #7a7a7a;
+            animation: fadeInUp 1s ease 0.2s backwards;
         }
 
         /* Gallery Section */
         .gallery-section {
-            padding: 4rem 2rem;
-            background: #f5f5f5;
+            padding: 6rem 2rem;
+            background: #faf8f5;
+            position: relative;
+        }
+
+        .gallery-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, #faf8f5, transparent);
+            transform: rotate(180deg);
         }
 
         .gallery-section h2 {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
+            font-size: 2.2rem;
+            margin-bottom: 4rem;
+            color: #8b7355;
+            font-weight: 300;
+            letter-spacing: 2px;
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
         .gallery-item {
             position: relative;
             overflow: hidden;
-            border-radius: 10px;
+            border-radius: 3px;
             cursor: pointer;
-            aspect-ratio: 1;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            aspect-ratio: 4/3;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            transition: all 0.4s ease;
+            background: white;
         }
 
         .gallery-item:hover {
-            transform: scale(1.05);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            transition: opacity 0.4s ease;
         }
 
         .gallery-item:hover img {
-            transform: scale(1.1);
+            opacity: 0.9;
         }
 
         /* Lightbox Modal */
@@ -110,7 +146,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.95);
+            background: rgba(255, 255, 255, 0.97);
             z-index: 1000;
             justify-content: center;
             align-items: center;
@@ -130,36 +166,45 @@
             max-width: 100%;
             max-height: 90vh;
             object-fit: contain;
-            border-radius: 5px;
+            border-radius: 3px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
         }
 
         .lightbox-close {
             position: absolute;
-            top: -40px;
+            top: -50px;
             right: 0;
-            color: white;
-            font-size: 2rem;
+            color: #8b7355;
+            font-size: 2.5rem;
             cursor: pointer;
             background: none;
             border: none;
             padding: 10px;
+            font-weight: 300;
+            transition: color 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            color: #5a5a5a;
         }
 
         .lightbox-nav {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            color: white;
+            color: #8b7355;
             font-size: 3rem;
             cursor: pointer;
-            background: rgba(255,255,255,0.1);
+            background: none;
             border: none;
-            padding: 1rem;
-            transition: background 0.3s ease;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            font-weight: 200;
         }
 
         .lightbox-nav:hover {
-            background: rgba(255,255,255,0.2);
+            color: #5a5a5a;
+            transform: translateY(-50%) scale(1.1);
         }
 
         .lightbox-prev {
@@ -173,7 +218,7 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -183,14 +228,20 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .profile-photo {
+                height: 250px;
+            }
             .hero h1 {
                 font-size: 2rem;
             }
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
             .gallery-section h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+            .gallery-grid {
+                gap: 1.5rem;
             }
         }
     </style>
@@ -199,34 +250,34 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <img src="https://via.placeholder.com/200" alt="Profile Photo" class="profile-photo">
-            <h1>Welcome to My Page</h1>
-            <p>Hi! I'm a photographer and creative explorer.</p>
-            <p>Scroll down to see my work.</p>
+            <img src="photos/sound_eye.JPG" alt="Profile Photo" class="profile-photo">
+            <h1>Welcome</h1>
+            <p>Photographer & Ocean Lover</p>
+            <p>Capturing moments by the waves</p>
         </div>
     </section>
 
     <!-- Gallery Section -->
     <section class="gallery-section">
-        <h2>Photo Gallery</h2>
+        <h2>Gallery</h2>
         <div class="gallery-grid">
             <div class="gallery-item" data-index="0">
-                <img src="https://via.placeholder.com/400/667eea/ffffff?text=Photo+1" alt="Gallery Photo 1">
+                <img src="https://via.placeholder.com/600x450/e8dfd5/8b7355?text=Ocean+1" alt="Gallery Photo 1">
             </div>
             <div class="gallery-item" data-index="1">
-                <img src="https://via.placeholder.com/400/764ba2/ffffff?text=Photo+2" alt="Gallery Photo 2">
+                <img src="https://via.placeholder.com/600x450/d4c5b4/8b7355?text=Waves+2" alt="Gallery Photo 2">
             </div>
             <div class="gallery-item" data-index="2">
-                <img src="https://via.placeholder.com/400/f093fb/ffffff?text=Photo+3" alt="Gallery Photo 3">
+                <img src="https://via.placeholder.com/600x450/c9b8a3/8b7355?text=Sunset+3" alt="Gallery Photo 3">
             </div>
             <div class="gallery-item" data-index="3">
-                <img src="https://via.placeholder.com/400/4facfe/ffffff?text=Photo+4" alt="Gallery Photo 4">
+                <img src="https://via.placeholder.com/600x450/bea992/8b7355?text=Beach+4" alt="Gallery Photo 4">
             </div>
             <div class="gallery-item" data-index="4">
-                <img src="https://via.placeholder.com/400/43e97b/ffffff?text=Photo+5" alt="Gallery Photo 5">
+                <img src="https://via.placeholder.com/600x450/b39a81/8b7355?text=Shore+5" alt="Gallery Photo 5">
             </div>
             <div class="gallery-item" data-index="5">
-                <img src="https://via.placeholder.com/400/fa709a/ffffff?text=Photo+6" alt="Gallery Photo 6">
+                <img src="https://via.placeholder.com/600x450/a88b70/8b7355?text=Coast+6" alt="Gallery Photo 6">
             </div>
         </div>
     </section>
@@ -259,18 +310,17 @@
         function openLightbox() {
             lightbox.classList.add('active');
             lightboxImg.src = galleryItems[currentImageIndex].src;
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
+            document.body.style.overflow = 'hidden';
         }
 
         function closeLightbox() {
             lightbox.classList.remove('active');
-            document.body.style.overflow = 'auto'; // Re-enable scrolling
+            document.body.style.overflow = 'auto';
         }
 
         function changeImage(direction) {
             currentImageIndex += direction;
             
-            // Loop around if at the end or beginning
             if (currentImageIndex >= galleryItems.length) {
                 currentImageIndex = 0;
             } else if (currentImageIndex < 0) {
