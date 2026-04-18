@@ -3,264 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            line-height: 1.8;
-            color: #5a5a5a;
-            background: #ffffff;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
-            background: #faf8f5;
-            padding: 0;
-            position: relative;
-        }
-
-        .profile-photo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 70%;
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 0;
-        }
-
-        .hero-content {
-            width: 100%;
-            text-align: center;
-            color: #ffffff;
-            padding: 3rem 2rem;
-            position: relative;
-            z-index: 1;
-            background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-            letter-spacing: 1px;
-            color: #ffffff;
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-            font-weight: 300;
-            color: #ffffff;
-            animation: fadeInUp 1s ease 0.2s backwards;
-        }
-
-        /* Gallery Section */
-        .gallery-section {
-            padding: 6rem 2rem;
-            background: #faf8f5;
-            position: relative;
-        }
-
-        .gallery-section h2 {
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 4rem;
-            color: #8b7355;
-            font-weight: 300;
-            letter-spacing: 2px;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 3px;
-            cursor: pointer;
-            aspect-ratio: 4/3;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            transition: all 0.4s ease;
-            background: white;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: opacity 0.4s ease;
-        }
-
-        .gallery-item:hover img {
-            opacity: 0.9;
-        }
-
-        /* Lightbox Modal */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.97);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90%;
-        }
-
-        .lightbox-content img {
-            max-width: 100%;
-            max-height: 90vh;
-            object-fit: contain;
-            border-radius: 3px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: -50px;
-            right: 0;
-            color: #8b7355;
-            font-size: 2.5rem;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 10px;
-            font-weight: 300;
-            transition: color 0.3s ease;
-        }
-
-        .lightbox-close:hover {
-            color: #5a5a5a;
-        }
-
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #8b7355;
-            font-size: 3rem;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-            font-weight: 200;
-        }
-
-        .lightbox-nav:hover {
-            color: #5a5a5a;
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .lightbox-prev {
-            left: 20px;
-        }
-
-        .lightbox-next {
-            right: 20px;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-content {
-                padding: 2rem 1.5rem;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-            .gallery-section h2 {
-                font-size: 1.8rem;
-            }
-            .gallery-grid {
-                gap: 1.5rem;
-            }
-        }
-    </style>
+    <title>Blanca Waves | Sound Healing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Hero Section -->
     <section class="hero">
-        <img src="photos/Sound_eye.JPG" alt="Profile Photo" class="profile-photo">
+        <img src="photos/Playing_1.JPG" alt="Blanca Waves Sound Healing" class="profile-photo">
         <div class="hero-content">
-            <h1>Welcome</h1>
-            <p>Blanca Waves</p>
-            <p>Sound Healer: Slow Work is Soul Work</p>
+            <h1>Slow Work is Soul Work</h1>
+            <!-- <img src="photos/Blancawaves_1.jpg" alt="Blanca Waves" class="brand-title-img"> -->
+            <!-- <p> Slow Work is Soul Work</p> -->
+             <p>Find your frequency</p>
+             <a href="inquiry.html" class="inquire-btn">Book a Soundbath</a>
+        </div>
+    </section>
+
+    <!-- Inquire Button Section
+    <section class="inquire-section">
+        <a href="inquiry.html" class="inquire-btn">Book a Session</a>
+    </section> -->
+
+    <!-- About Section - Text Left, Photo Right -->
+    <section class="about-section">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About our Sound Guide</h2>
+                <p>Blancawaves was born from weaving together my passion for radical community care, internal transformation, and coming as we are Healing moves like waves, not linear, but rhythmic, collective and alive. </p>
+                <p>I am a child of immigrant parents from El Salvador, raised in the heart of Los Angeles, and made my way down the coast to San Diego. As a licensed mental health therapist, I find deep purpose in helping communities rediscover a new relationship with rest and reclaiming wholeness.</p>
+                <p>This space exists because healing was never meant to be done alone. Because community is medicine. Because we deserve a third space—outside of work, outside of home—where we can exhale, soften, and remember who we are together.</p>
+                <p>This is ours.</p>
+                <p>And if you're here, it's yours too.</p>
+            </div>
+            <div class="about-photo">
+                <img src="photos/blanca_looking_sun_long.JPG" alt="Blanca Waves">
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section - Photo Left, Text Right -->
+    <section class="benefits-section">
+        <div class="benefits-content">
+            <div class="benefits-photo">
+                <img src="photos/Sound_eye.JPG" alt="Benefits of Sound Healing">
+            </div>
+            <div class="benefits-text">
+                <h2>A Nervous System Reset</h2>
+                <p>Soundbaths found me during a season when I needed something slower than talk, softer than survival. It became a language for what my body was holding when words fell short—grief, joy, exhaustion, hope. Over time, it stopped being just a personal practice and turned into a shared offering.</p>
+                <p>What to expect during a soundbath- a shared space to gently relax and restore our nervous system, prompting deep relaxation, mental clarity, and balance. Being immersed in the soothing sounds and frequencies of the crystal singing bowls, chimes, or ocean drums will guide you to a meditative state. Your mind, body, and spirit will thank you.</p> 
+            </div>
+        </div>
+    </section>
+
+    <!-- Offerings -->
+    <section class="service-offerings">
+        <h2 class="offerings-title">Offerings</h2>
+        <!-- <div class="offerings-image-wrap">
+            <img src="photos/Bowls1.jpg" alt="Sound Bowls" class="offerings-center-img">
+        </div> -->
+        <div class="offerings-cards">
+            <div class="offering-card">
+                <h3>Private Sound Baths</h3>
+                <p>Experience a personalized journey of deep relaxation and energetic renewal, tailored just for you — perfect for birthdays, bachelorettes, and meaningful gifts.</p>
+            </div>
+            <div class="offering-card">
+                <h3>Group Sound Journeys</h3>
+                <p>Gather in community and let soothing vibrations guide you into collective calm and harmony. Open to community events, women’s circles, corporate spaces, and classrooms.</p>
+            </div>
+            <div class="offering-card">
+                <h3>Retreats</h3>
+                <p>Immerse yourself in a restorative escape where sound, nature, and mindful practices nourish your body and soul.</p>
+            </div>
+        </div>
+        <div class="offerings-cta">
+            <a href="inquiry.html" class="offerings-btn">THE SERVICES</a>
         </div>
     </section>
 
     <!-- Gallery Section -->
     <section class="gallery-section">
         <h2>Gallery</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item" data-index="0">
-                <img src="photos/blanca_looking_sun_long.JPG" alt="Gallery Photo 1">
+
+        <!-- Video -->
+        <div class="gallery-video-wrap">
+            <video src="photos/Park_video1.MOV" controls playsinline></video>
+            <!-- <video src="photos/Playing_vid1.MP4" controls playsinline></video> -->
+        </div>
+
+        <!-- Photo Carousel -->
+        <div class="carousel-wrapper">
+            <button class="carousel-btn carousel-btn-prev" aria-label="Previous">&#8249;</button>
+            <div class="carousel-track-container">
+                <div class="carousel-track">
+                    <div class="carousel-item" data-index="0"><img src="photos/blanca_looking_sun_long.JPG" alt="Gallery Photo 1"></div>
+                    <div class="carousel-item" data-index="1"><img src="photos/Playing_3.JPG" alt="Gallery Photo 2"></div>
+                    <div class="carousel-item" data-index="2"><img src="photos/event_1.JPG" alt="Gallery Photo 3"></div>
+                    <div class="carousel-item" data-index="3"><img src="photos/blanca_indoor_sun.JPG" alt="Gallery Photo 4"></div>
+                </div>
             </div>
-            <div class="gallery-item" data-index="1">
-                <img src="photos/Playing_vid1.MP4" alt="Gallery Photo 2">
-            </div>
-            <div class="gallery-item" data-index="2">
-                <img src="photos/Playing_1.JPG" alt="Gallery Photo 3">
-            </div>
-            <div class="gallery-item" data-index="3">
-                <img src="photos/Playing_3.JPG" alt="Gallery Photo 4">
-            </div>
-            <div class="gallery-item" data-index="4">
-                <img src="photos/event_1.JPG" alt="Gallery Photo 5">
-            </div>
-            <div class="gallery-item" data-index="5">
-                <img src="photos/blanca_indoor_sun.JPG" alt="Gallery Photo 6">
-            </div>
+            <button class="carousel-btn carousel-btn-next" aria-label="Next">&#8250;</button>
+        </div>
+    </section>
+
+    <!-- Past Clients Section -->
+    <section class="past-clients">
+        <h2>Past Clients</h2>
+        <div class="client-logos">
+            <img src="photos/camarena_logo.jpeg" alt="Client Logo 1">
+            <img src="photos/Mount_saint_marys_logo.png" alt="Client Logo 2">
+            <img src="photos/triatholon_san_diego_logo.jpeg" alt="Client Logo 3">
+            <!-- <img src="https://via.placeholder.com/150x60/8b7355/ffffff?text=Client+4" alt="Client Logo 4">
+            <img src="https://via.placeholder.com/150x60/8b7355/ffffff?text=Client+5" alt="Client Logo 5"> -->
         </div>
     </section>
 
@@ -274,59 +130,6 @@
         </div>
     </div>
 
-    <script>
-        // Gallery functionality
-        let currentImageIndex = 0;
-        const galleryItems = document.querySelectorAll('.gallery-item img');
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-
-        // Add click event to each gallery item
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            item.addEventListener('click', function() {
-                currentImageIndex = parseInt(this.getAttribute('data-index'));
-                openLightbox();
-            });
-        });
-
-        function openLightbox() {
-            lightbox.classList.add('active');
-            lightboxImg.src = galleryItems[currentImageIndex].src;
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox() {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        function changeImage(direction) {
-            currentImageIndex += direction;
-            
-            if (currentImageIndex >= galleryItems.length) {
-                currentImageIndex = 0;
-            } else if (currentImageIndex < 0) {
-                currentImageIndex = galleryItems.length - 1;
-            }
-            
-            lightboxImg.src = galleryItems[currentImageIndex].src;
-        }
-
-        // Close lightbox when clicking outside the image
-        lightbox.addEventListener('click', function(e) {
-            if (e.target === lightbox) {
-                closeLightbox();
-            }
-        });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            if (!lightbox.classList.contains('active')) return;
-            
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') changeImage(-1);
-            if (e.key === 'ArrowRight') changeImage(1);
-        });
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

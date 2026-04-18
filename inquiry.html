@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Session | Blanca Waves</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Additional styles for inquiry page */
+        .inquiry-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            min-height: 100vh;
+        }
+
+        .inquiry-container h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: #8b7355;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .inquiry-container > p {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            color: #7a7a7a;
+        }
+
+        .inquiry-form {
+            background: #faf8f5;
+            padding: 3rem;
+            border-radius: 3px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #5a5a5a;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #d4c5b4;
+            border-radius: 3px;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 1rem;
+            color: #5a5a5a;
+            background: #ffffff;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #8b7355;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: #8b7355;
+            color: #ffffff;
+            border: none;
+            border-radius: 3px;
+            font-size: 1.1rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+
+        .submit-btn:hover {
+            background: #6b5a45;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 115, 85, 0.3);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: #8b7355;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="inquiry-container">
+        <h1>Book a Session</h1>
+        <p>Fill out the form below and I'll get back to you within 24 hours.</p>
+
+        <form class="inquiry-form" action="https://formspree.io/f/xgoryozg" method="POST">
+            <input type="hidden" name="_next" value="https://blancawaves.com/index.html">
+
+            <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+                <label for="session-type">Session Type *</label>
+                <select id="session-type" name="session-type" required>
+                    <option value="">Select a session type</option>
+                    <option value="individual">Individual Sound Bath</option>
+                    <option value="group">Group Sound Bath</option>
+                    <option value="private-event">Private Event</option>
+                    <option value="consultation">Consultation</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" required placeholder="Tell me about what you're looking for..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Inquiry</button>
+        </form>
+
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </div>
+</body>
+</html>
